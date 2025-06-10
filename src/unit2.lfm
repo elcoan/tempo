@@ -10,7 +10,6 @@ object Form2: TForm2
   KeyPreview = True
   Position = poOwnerFormCenter
   LCLVersion = '4.0.0.4'
-  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   object Image1: TImage
     Left = 8
@@ -163,8 +162,8 @@ object Form2: TForm2
     Left = 88
     Height = 15
     Top = 126
-    Width = 65
-    Caption = '2025, elcoan'
+    Width = 120
+    Caption = '2025, Made with 🖤 by '
     Color = clBlue
     ParentColor = False
   end
@@ -189,7 +188,7 @@ object Form2: TForm2
     Height = 15
     Top = 34
     Width = 87
-    Caption = 'version 25-06-09'
+    Caption = 'version 25-06-10'
   end
   object Label5: TLabel
     Left = 88
@@ -218,6 +217,21 @@ object Form2: TForm2
     Font.Quality = fqDraft
     ParentFont = False
     OnClick = Label6Click
+    OnMouseEnter = Label5MouseEnter
+    OnMouseLeave = Label5MouseLeave
+  end
+  object Label7: TLabel
+    Left = 208
+    Height = 15
+    Top = 126
+    Width = 46
+    Caption = '@elcoan'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    OnClick = Label7Click
     OnMouseEnter = Label5MouseEnter
     OnMouseLeave = Label5MouseLeave
   end

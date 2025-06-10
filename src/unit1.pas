@@ -230,10 +230,10 @@ end;
 
 procedure TForm1.ListView1DrawItem(Sender: TCustomListView; AItem: TListItem; ARect: TRect; AState: TOwnerDrawState);
 var
+  R: TRect;
   c: TCanvas;
   i, w: Integer;
   El: TTaskRecord;
-  R: TRect;
   ts: TTextStyle;
 begin
   if (AItem.Index < 0) or (AItem.Index > High(FilteredIndexes)) then Exit;

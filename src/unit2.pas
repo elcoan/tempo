@@ -19,13 +19,14 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
-    procedure FormCreate(Sender: TObject);
+    Label7: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Label3Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
     procedure Label5MouseEnter(Sender: TObject);
     procedure Label5MouseLeave(Sender: TObject);
     procedure Label6Click(Sender: TObject);
+    procedure Label7Click(Sender: TObject);
   private
 
   public
@@ -56,9 +57,9 @@ begin
   LCLIntf.OpenURL('https://t.me/tempo_chat');
 end;
 
-procedure TForm2.FormCreate(Sender: TObject);
+procedure TForm2.Label7Click(Sender: TObject);
 begin
-  Label3.Font.Color := clBlue;
+  LCLIntf.OpenURL('https://t.me/lakoano');
 end;
 
 procedure TForm2.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
