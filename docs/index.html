@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tempo - Simple Time Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 960px;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #222;
+    }
+    h1 img {
+      height: 48px;
+    }
+    h2, h3 {
+      color: #222;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .highlight {
+      background-color: #e6fbf5;
+      padding: 1rem;
+      border-left: 4px solid #00c28d;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Стили для скриншотов */
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .screenshot-link {
+      flex: 1 1 calc(33% - 0.66rem); /* 3 колонки с отступами */
+      display: block;
+      border: 1px solid #ddd;
+      /* border-radius: 6px; */
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .screenshot-link:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .screenshot-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .screenshot-link {
+        flex: 1 1 100%; /* по одному на строку на мобильных */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <img src="pics/logo.png" alt="Tempo Logo">
+    Tempo
+  </h1>
+
+  <h2>A simple and reliable time tracker for solo workers</h2>
+
+  <div class="highlight">
+    <p><strong>Tempo is free to use, fully open source, and built with privacy in mind.</strong> No subscriptions, no ads, no hidden costs — just pure, native time tracking that works offline.</p>
+  </div>
+
+  <p><strong>Tempo</strong> is a native time tracking app built by a freelancer for freelancers. Lightweight, offline-first, no browser required, with open data format. Just start it. Just use it.</p>
+
+  <hr />
+
+  <h3>📸 Screenshots</h3>
+  <div class="screenshots">
+    <a href="pics/1.png" target="_blank" class="screenshot-link">
+      <img src="pics/1.png" alt="Main Window of Tempo App">
+    </a>
+    <a href="pics/2.png" target="_blank" class="screenshot-link">
+      <img src="pics/2.png" alt="CSV File Example in Excel">
+    </a>
+    <a href="pics/3.png" target="_blank" class="screenshot-link">
+      <img src="pics/3.png" alt="System Tray Mode">
+    </a>
+  </div>
+
+  <p><em>All screenshots show real UI from Tempo — no mockups or fake visuals.</em></p>
+
+  <hr />
+
+  <h3>💡 Why I Built Tempo</h3>
+  <p>As a freelancer, I faced the same problem every day: I needed to track my time, but none of the available apps met my requirements.</p>
+  <ul>
+    <li>They only worked in browsers.</li>
+    <li>They required constant internet access.</li>
+    <li>They consumed too much memory.</li>
+    <li>It was hard to get direct access to my data.</li>
+    <li>I didn’t want to share information about my working hours with third parties.</li>
+  </ul>
+  <p>I wanted something simple:
+    <ul>
+      <li>An app that starts instantly</li>
+      <li>Works without an internet connection</li>
+      <li>Uses minimal system resources</li>
+      <li>Stores data in a readable format</li>
+      <li>Never gets in the way of your work</li>
+    </ul>
+  </p>
+  <p>When I couldn't find such an app — I decided to build it myself.</p>
+  <p>That’s how <strong>Tempo</strong> was born.</p>
+
+  <hr />
+
+  <h3>✅ Key Features</h3>
+  <style>
+    .features-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      /* border-radius: 8px; */
+      overflow: hidden;
+      text-align: left;
+    }
+  
+    .features-table th {
+      background-color: #d9f0ff;
+      /* color: #fff; */
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 1rem;
+      vertical-align: middle;
+    }
+  
+    .features-table td {
+      padding: 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid #eee;
+      background-color: #fbfbfb;
+    }
+  
+    .features-table tr:nth-child(even) td {
+      background-color: #f7f7f7;
+    }
+  
+    .feature-title {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+  
+    .feature-desc {
+      color: #555;
+    }
+  </style>
+  
+  <table class="features-table">
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Free & Open Source</div></td>
+      <td><div class="feature-desc">MIT License. You can view, modify, and redistribute the code freely.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Works Offline</div></td>
+      <td><div class="feature-desc">Tempo doesn’t require an internet connection. Use it on the go, even without Wi-Fi.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">No Browser Required</div></td>
+      <td><div class="feature-desc">This is a full desktop app. No tabs, no background processes.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Minimalist Interface</div></td>
+      <td><div class="feature-desc">Only essential functions: start, stop, task, description. No extra buttons.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Native Performance</div></td>
+      <td><div class="feature-desc">Built without Electron, uses minimal RAM and CPU.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Data in Your Hands</div></td>
+      <td><div class="feature-desc">All records are saved in CSV files. Open them in Excel, Google Sheets, or any text editor.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Easy Integration</div></td>
+      <td><div class="feature-desc">Want charts? Use Excel. Need automation? Parse the CSV with Python.</div></td>
+    </tr>
+    <tr>
+      <td><div class="feature-title">Future: Cross-Platform</div></td>
+      <td><div class="feature-desc">Currently available for Windows. Linux and macOS versions are coming soon.</div></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <h3>🧩 How Data Is Stored</h3>
+  <p>All time tracking data is stored in a simple CSV file. Example:</p>
+  <pre>
+<code>Date,Start,End,Task,Duration</code>
+<code>2025-05-01,09:30,11:15,"Designing Tempo app interface",105</code>
+<code>2025-05-01,13:00,14:30,"Setting up local data storage",90</code></pre>
+  <p>This allows you to:
+    <ul>
+      <li>Manually edit data (e.g., fix typos)</li>
+      <li>Export and analyze it in your favorite tools</li>
+      <li>Share data safely — just send the file</li>
+    </ul>
+  </p>
+
+  <hr />
+
+  <h3>🚀 How to Get Started</h3>
+  <ol>
+    <li><strong>Download the app</strong><br/>
+        Go to <a href="https://elcoan.github.io/tempo/"  target="_blank">the download page</a></li>
+    <li><strong>Run the executable</strong><br/>
+        Unpack the archive and run <code>tempo.exe</code></li>
+    <li><strong>Add a task</strong><br/>
+        Enter the task name and click "Start"</li>
+    <li><strong>Stop the timer</strong><br/>
+        Click "Stop" when done</li>
+    <li><strong>View results</strong><br/>
+        All your records will be saved in the <code>time.csv</code> file</li>
+  </ol>
+
+  <hr />
+
+  <h3>📊 How to Analyze Time</h3>
+  <p>Tempo does not provide built-in analytics — because you can do it yourself using your preferred tools:</p>
+  <ul>
+    <li><strong>Excel / Numbers / Google Sheets</strong> — open the CSV and create charts</li>
+    <li><strong>Python / R / Pandas</strong> — automate data processing</li>
+    <li><strong>Airtable / Notion</strong> — import CSV and build custom dashboards</li>
+  </ul>
+
+  <hr />
+
+  <h3>👥 Who Is Tempo For</h3>
+  <ul>
+    <li><strong>Freelancers</strong> who need to count hours for clients</li>
+    <li><strong>Solopreneurs</strong> working on multiple projects</li>
+    <li><strong>Remote workers</strong> often offline</li>
+    <li><strong>Technical users</strong> who value control over their data and system</li>
+    <li><strong>People frustrated with heavy browser-based apps</strong></li>
+  </ul>
+
+  <hr />
+
+  <h3>🌍 Roadmap</h3>
+  <ul>
+    <li>Linux and macOS support</li>
+    <li>In-app editing of records</li>
+    <li>Weekly reports</li>
+    <li>Optional integration with API</li>
+  </ul>
+
+  <hr />
+
+  <h3>🔗 Feedback Channels</h3>
+  <ul>
+    <li>🌐 <a href="https://elcoan.github.io/tempo/"  target="_blank">Official Tempo website</a></li>
+    <li>📧 <a href="mailto:hello.tempo.app@gmail.com">hello.tempo.app@gmail.com</a></li>
+    <li>💬 <a href="https://t.me/tempo_chat"  target="_blank">Telegram group @tempo_chat</a></li>
+  </ul>
+
+  <hr />
+
+  <h3>📦 Download Now</h3>
+  <p>👉 <a href="https://github.com/yourname/tempo/releases/latest"  target="_blank">Download Tempo for Windows</a></p>
+
+  <hr />
+
+  <h3>🤝 Open Source</h3>
+  <p>Tempo is an open source project released under the MIT License.<br/>
+     You can:
+     <ul>
+       <li>View the source code</li>
+       <li>Participate in development</li>
+       <li>Fork it and customize for your own needs</li>
+     </ul>
+  </p>
+  <p>GitHub: <a href="https://github.com/yourname/tempo"  target="_blank">github.com/yourname/tempo</a></p>
+
+</body>
+</html>
