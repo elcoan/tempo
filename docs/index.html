@@ -61,7 +61,7 @@
     }
 
     .screenshot-link {
-      flex: 1 1 calc(33% - 0.66rem); /* 3 колонки с отступами */
+      flex: 1 1 calc(33% - 0.66rem);
       display: block;
       border: 1px solid #ddd;
       /* border-radius: 6px; */
@@ -81,7 +81,7 @@
 
     @media (max-width: 768px) {
       .screenshot-link {
-        flex: 1 1 100%; /* по одному на строку на мобильных */
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -93,7 +93,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* Не переносить на новую строку */
+    flex-wrap: nowrap;
     gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
@@ -160,9 +160,15 @@
       <img src="pics/logo.png" alt="Tempo Logo">
       Tempo
     </h1>
-    <a href="https://github.com/ваше-имя/tempo/releases/latest" target="_blank" class="download-button">
+    <a href="https://github.com/elcoan/tempo/releases/latest/download/tempo-windows.zip" target="_blank" class="download-button">
       <span class="text">Download</span>
-      <span class="icon-only"><img src="pics/download.png"></img></span>
+      <span class="icon-only">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </span>
     </a>
   </div>
 
@@ -179,13 +185,13 @@
   <h3>📸 Screenshots</h3>
   <div class="screenshots">
     <a href="pics/1.png" target="_blank" class="screenshot-link">
-      <img src="pics/1.png" alt="Main Window of Tempo App">
+      <img src="pics/1.png">
     </a>
     <a href="pics/2.png" target="_blank" class="screenshot-link">
-      <img src="pics/2.png" alt="CSV File Example in Excel">
+      <img src="pics/2.png">
     </a>
     <a href="pics/3.png" target="_blank" class="screenshot-link">
-      <img src="pics/3.png" alt="System Tray Mode">
+      <img src="pics/3.png">
     </a>
   </div>
 
@@ -204,11 +210,11 @@
   </ul>
   <p>I wanted something simple:
     <ul>
-      <li>An app that starts instantly</li>
-      <li>Works without an internet connection</li>
-      <li>Uses minimal system resources</li>
-      <li>Stores data in a readable format</li>
-      <li>Never gets in the way of your work</li>
+      <li>An app that starts instantly.</li>
+      <li>Works without an internet connection.</li>
+      <li>Uses minimal system resources.</li>
+      <li>Stores data locally in a readable format.</li>
+      <li>Never gets in the way of your work.</li>
     </ul>
   </p>
   <p>When I couldn't find such an app — I decided to build it myself.</p>
@@ -320,7 +326,7 @@
   <h3>🚀 How to Get Started</h3>
   <ol>
     <li><strong>Download the app</strong><br/>
-        Go to <a href="https://elcoan.github.io/tempo/"  target="_blank">the download page</a></li>
+        Go to <a href="https://github.com/elcoan/tempo/releases/latest/download/tempo-windows.zip"  target="_blank">the download page</a></li>
     <li><strong>Run the executable</strong><br/>
         Unpack the archive and run <code>tempo.exe</code></li>
     <li><strong>Add a task</strong><br/>
@@ -328,7 +334,7 @@
     <li><strong>Stop the timer</strong><br/>
         Click "Stop" when done</li>
     <li><strong>View results</strong><br/>
-        All your records will be saved in the <code>time.csv</code> file</li>
+        All your records will be saved in the <code>tasks.csv</code> file</li>
   </ol>
 
   <hr />
@@ -374,7 +380,7 @@
   <hr />
 
   <h3>📦 Download Now</h3>
-  <p>👉 <a href="https://github.com/yourname/tempo/releases/latest"  target="_blank">Download Tempo for Windows</a></p>
+  <p><a href="https://github.com/elcoan/tempo/releases/latest/download/tempo-windows.zip" target="_blank" style="padding-left: 40px;">Download Tempo for Windows</a></p>
 
   <hr />
 
