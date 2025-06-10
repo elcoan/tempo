@@ -13,14 +13,11 @@ The project is fully open source under the MIT license.
 
 ## 📸 Screenshots
 
-### Main Interface
-![Main Window](docs/screenshots/main-window.png)
+![Main Window](docs/pics/1.png)
 
-### System Tray Mode
-![System Tray Mode](docs/screenshots/tray-mode.png)
+![Main Window](docs/pics/2.png)
 
-### CSV File Example
-![CSV File in Excel](docs/screenshots/csv-example.png)
+![Main Window](docs/pics/3.png)
 
 ---
 
