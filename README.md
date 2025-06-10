@@ -112,6 +112,6 @@ Contributions are welcome! If you want to help with:
 
 ## 📄 License
 
-MIT License — see the [LICENSE](LICENSE) file for details.
+MIT License — see the [LICENSE](LICENSE.md) file for details.
 
 You are free to use, modify, and distribute the software in both commercial and personal projects.
