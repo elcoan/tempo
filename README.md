@@ -110,6 +110,18 @@ Contributions are welcome! If you want to help with:
 
 ---
 
+## 📬 Feedback and Support
+
+If you have questions, feedback, or need help with Tempo, feel free to reach out using any of the following channels:
+
+- 🌐 **Project Site**: [https://elcoan.github.io/tempo/](https://elcoan.github.io/tempo/)
+- 📧 **Email**: [hello.tempo.app@gmail.com](mailto:hello.tempo.app@gmail.com)
+- 💬 **Telegram Group**: [@tempo_chat](https://t.me/tempo_chat)
+
+We're happy to hear from you!
+
+---
+
 ## 📄 License
 
 MIT License — see the [LICENSE](LICENSE.md) file for details.
