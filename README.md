@@ -68,7 +68,7 @@ Being open source means:
 1. Install [Lazarus](https://www.lazarus-ide.org/)
 2. Clone the repository:
    ```bash
-   git clone https://github.com/yourname/tempo.git
+   git clone https://github.com/elcoan/tempo.git
    ```
 3. Open `tempo.lpr` in Lazarus
 4. Compile and run
