@@ -13,11 +13,11 @@ The project is fully open source under the MIT license.
 
 ## 📸 Screenshots
 
-![Main Window](docs/pics/1.png)
-
-![Main Window](docs/pics/2.png)
-
-![Main Window](docs/pics/3.png)
+<div align="left">
+  <a href="./docs/screenshots/1.png"><img src="./docs/pics/1.png" width="250"></a>
+  <a href="./docs/screenshots/2.png"><img src="./docs/pics/2.png" width="250"></a>
+  <a href="./docs/screenshots/3.png"><img src="./docs/pics/3.png" width="250"></a>
+</div>
 
 ---
 
