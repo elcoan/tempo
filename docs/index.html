@@ -85,10 +85,83 @@
 </head>
 <body>
 
-  <h1>
-    <img src="pics/logo.png" alt="Tempo Logo">
-    Tempo
-  </h1>
+<style>
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* Не переносить на новую строку */
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  h1.header-title {
+    font-size: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  h1.header-title img {
+    height: 48px;
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    min-width: 100px;
+    max-width: 140px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5283f9;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .download-button span.icon-only {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .download-button {
+      max-width: 48px;
+      padding: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .download-button span.text {
+      display: none;
+    }
+
+    .download-button span.icon-only {
+      display: inline;
+    }
+  }
+</style>
+
+  <div class="header-container">
+    <h1 class="header-title">
+      <img src="pics/logo.png" alt="Tempo Logo">
+      Tempo
+    </h1>
+    <a href="https://github.com/ваше-имя/tempo/releases/latest" target="_blank" class="download-button">
+      <span class="text">Download</span>
+      <span class="icon-only"><img src="pics/download.png"></img></span>
+    </a>
+  </div>
 
   <h2>A simple and reliable time tracker for solo workers</h2>
 
