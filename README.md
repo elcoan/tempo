@@ -56,9 +56,9 @@ Being open source means:
 ## 🗂️ File Structure
 
 ```
-/tempo
-├── src/                # Source code
-├── docs/               # Documentation and website
+/ tempo
+  ├── docs/          # Documentation and website
+  ├── src/           # Source code
 ```
 
 ---
