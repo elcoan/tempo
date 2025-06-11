@@ -31,12 +31,15 @@ type
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     MenuItem10: TMenuItem;
+    MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
     MenuItem6: TMenuItem;
     MenuItem7: TMenuItem;
     MenuItem9: TMenuItem;
     PopupMenu1: TPopupMenu;
+    Separator1: TMenuItem;
     SpeedButtonImages: TImageList;
     ListView1: TListView;
     Panel1: TPanel;
@@ -50,7 +53,6 @@ type
     procedure Edit2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormWindowStateChange(Sender: TObject);
@@ -60,8 +62,10 @@ type
     procedure ListView1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure ListView1UTF8KeyPress(Sender: TObject; var UTF8Key: TUTF8Char);
     procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
     procedure Panel1Paint(Sender: TObject);
@@ -79,6 +83,7 @@ type
     procedure DoStart();
     procedure DoFinish();
     procedure SaveToFile();
+    procedure ReloadFile();
     procedure UpdateActiveTask();
     function GetActiveTask(): TTaskRecord;
   public
@@ -278,17 +283,29 @@ end;
 
 procedure TForm1.ListView1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
-  if not Edit2.Enabled then Exit;
-  if (Key = VK_RETURN) and (ssCtrl in Shift) then Exit;
   if Key = VK_UP then begin
-    if (ListView1.Selected <> nil) and (ListView1.Selected.Index = 0) then begin
+    if Edit2.Enabled and (ListView1.Selected <> nil) and (ListView1.Selected.Index = 0) then begin
       Key := 0;
+      Edit2.SetFocus;
+      Exit;
+    end;
+  end;
+  if (Key = VK_RETURN) and (ssCtrl in Shift) then begin
+    if Edit2.Enabled then begin
+       ListView1DblClick(Sender);
+       SpeedButton2Click(Sender);
+    end;
+    Exit;
+  end;
+  if Key = VK_RETURN then begin
+    if not Edit2.Enabled then begin
+      SpeedButton2Click(Sender);
+    end else begin
+      ListView1DblClick(Sender);
       Edit2.SetFocus;
     end;
   end;
-  if Key = 13 then begin
-    ListView1DblClick(Sender);
-  end;
+  Exit;
 end;
 
 procedure TForm1.ListView1UTF8KeyPress(Sender: TObject; var UTF8Key: TUTF8Char);
@@ -305,6 +322,14 @@ begin
   Application.Terminate;
 end;
 
+procedure TForm1.MenuItem2Click(Sender: TObject);
+begin
+  if not Edit2.Enabled then
+    SpeedButton2Click(Sender);
+  LCLIntf.OpenDocument('tasks.csv');
+  ShowMessage('Don''t forget to reload CSV file after changing it.');
+end;
+
 procedure TForm1.MenuItem3Click(Sender: TObject);
 begin
   SaveToFile();
@@ -314,6 +339,11 @@ end;
 procedure TForm1.MenuItem4Click(Sender: TObject);
 begin
  TrayIcon1DblClick(Sender);
+end;
+
+procedure TForm1.MenuItem5Click(Sender: TObject);
+begin
+ ReloadFile();
 end;
 
 procedure TForm1.MenuItem7Click(Sender: TObject);
@@ -348,12 +378,13 @@ begin
   if SpeedButton2.ImageIndex = 0 then begin
     SpeedButton2.ImageIndex := 1;
     Edit2.Enabled := False;
-    Panel1.Color := TColorRef($F0F0F0);
+    Panel1.Color   := TColorRef($F0F0F0);
     DoStart();
     Tick := 0;
     Timer1.Enabled := True;
     GetActiveTask();
     ApplyFilter('');
+    ListView1.SetFocus;
   end else begin
     Timer1.Enabled := False;
     StopFilter := True;
@@ -401,7 +432,7 @@ begin
   ]);
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TForm1.ReloadFile();
 var
   i: Integer;
   r, D: TTaskRecord;
@@ -409,7 +440,12 @@ var
   CSVData: TStringList;
   Fields: TStringArray;
 begin
-  data := TList.Create;
+  //
+  for i := 0 to data.Count-1 do begin
+    r := TTaskRecord(data[i]);
+    FreeAndNil(r);
+  end;
+  data.Clear;
   curDate := '';
   D := nil;
   //
@@ -458,14 +494,10 @@ begin
   ApplyFilter('');
 end;
 
-procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TForm1.FormCreate(Sender: TObject);
 begin
-  if (Key = VK_RETURN) and (ssCtrl in Shift) then begin
-    try
-      SpeedButton2Click(Sender);
-    except
-    end;
-  end;
+  data := TList.Create;
+  ReloadFile();
 end;
 
 procedure TForm1.Edit2Change(Sender: TObject);
@@ -488,8 +520,7 @@ end;
 procedure TForm1.Edit2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   if Key = VK_RETURN then begin
-    Key := 0;
-    Edit2.ClearSelection;
+    SpeedButton2Click(Sender);
     Exit;
   end;
   if Key = VK_ESCAPE then begin
@@ -499,6 +530,7 @@ begin
   end;
   if Key = VK_DOWN then begin
     ListView1.SetFocus;
+    Key := 0;
   end;
 end;
 
